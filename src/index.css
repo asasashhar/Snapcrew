@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #fbf9f6;
+  --color-surface-dim: #dbdad7;
+  --color-surface-bright: #fbf9f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3f0;
+  --color-surface-container: #efeeeb;
+  --color-surface-container-high: #eae8e5;
+  --color-surface-container-highest: #e4e2df;
+  --color-on-surface: #1b1c1a;
+  --color-on-surface-variant: #5d3f3c;
+  --color-inverse-surface: #30312f;
+  --color-inverse-on-surface: #f2f0ed;
+  --color-outline: #916f6b;
+  --color-outline-variant: #e6bdb8;
+  --color-surface-tint: #c00015;
+  --color-primary: #ae0012;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #d71921;
+  --color-on-primary-container: #ffecea;
+  --color-inverse-primary: #ffb4ac;
+  --color-secondary: #5f5e5e;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e5e2e1;
+  --color-on-secondary-container: #656464;
+  --color-tertiary: #704e00;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #8f6500;
+  --color-on-tertiary-container: #ffedd4;
+  --color-tertiary-fixed: #ffdea9;
+  --color-tertiary-fixed-dim: #febb2d;
+  --color-primary-fixed: #ffdad6;
+  --color-primary-fixed-dim: #ffb4ac;
+
+  --font-display-hero: 'Syne', sans-serif;
+  --font-headline-xl: 'Syne', sans-serif;
+  --font-headline-lg: 'Syne', sans-serif;
+  --font-headline-md: 'Syne', sans-serif;
+  --font-headline-sm: 'Syne', sans-serif;
+  --font-serif-accent: 'Newsreader', Georgia, serif;
+  --font-body-lg: 'Hanken Grotesk', sans-serif;
+  --font-body-md: 'Hanken Grotesk', sans-serif;
+  --font-body-sm: 'Hanken Grotesk', sans-serif;
+  --font-label-caps: 'Hanken Grotesk', sans-serif;
+  --font-label-editorial: 'Newsreader', Georgia, serif;
+}
+
+/* Custom Spacing & Typography Utility Fallbacks */
+.font-display-hero {
+  font-family: 'Syne', sans-serif;
+}
+.font-serif-accent {
+  font-family: 'Newsreader', Georgia, serif;
+}
+.font-headline-xl,
+.font-headline-lg,
+.font-headline-md,
+.font-headline-sm {
+  font-family: 'Syne', sans-serif;
+}
+.font-label-caps {
+  font-family: 'Hanken Grotesk', sans-serif;
+  letter-spacing: 0.12em;
+}
+.font-label-editorial {
+  font-family: 'Newsreader', Georgia, serif;
+}
+.font-body-lg,
+.font-body-md,
+.font-body-sm {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+/* Design System Spacing Utilities */
+.px-margin-desktop {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .px-margin-desktop {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+.px-margin {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.py-space-3xl {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+@media (min-width: 768px) {
+  .py-space-3xl {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+.py-space-2xl {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.mb-space-2xl {
+  margin-bottom: 3.5rem;
+}
+.p-space-2xl {
+  padding: 3.5rem;
+}
+.p-space-xl {
+  padding: 2.5rem;
+}
+.p-space-lg {
+  padding: 1.5rem;
+}
+.p-space-md {
+  padding: 1rem;
+}
+.p-space-sm {
+  padding: 0.5rem;
+}
+.p-space-xs {
+  padding: 0.25rem;
+}
+.gap-gutter-desktop {
+  gap: 2.5rem;
+}
+.gap-gutter {
+  gap: 1.5rem;
+}
+.gap-space-lg {
+  gap: 1.5rem;
+}
+.gap-space-md {
+  gap: 1rem;
+}
+.gap-space-sm {
+  gap: 0.5rem;
+}
+.gap-space-xs {
+  gap: 0.25rem;
+}
+.pb-space-xl {
+  padding-bottom: 2.5rem;
+}
+.pt-space-xl {
+  padding-top: 2.5rem;
+}
+.mt-space-xl {
+  margin-top: 2.5rem;
+}
+.mb-space-xl {
+  margin-bottom: 2.5rem;
+}
+.mt-space-lg {
+  margin-top: 1.5rem;
+}
+.mb-space-lg {
+  margin-bottom: 1.5rem;
+}
+.mt-space-md {
+  margin-top: 1rem;
+}
+.mb-space-md {
+  margin-bottom: 1rem;
+}
+.mt-space-sm {
+  margin-top: 0.5rem;
+}
+.mb-space-sm {
+  margin-bottom: 0.5rem;
+}
+.px-space-xl {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.px-space-lg {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-space-md {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-space-sm {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.py-space-md {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-space-sm {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-space-xs {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+/* Sharp architectural border rules */
+* {
+  border-radius: 0px !important;
+}
+
+/* Circular exception rule for icons, status indicators, and avatars */
+.rounded-full {
+  border-radius: 9999px !important;
+}

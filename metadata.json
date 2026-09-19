@@ -1,0 +1,6 @@
+{
+  "name": "Snapcrew Studio",
+  "description": "Cinematic photography and film studio based in Payyanangadi, Tirur, Kerala documenting weddings, portraits, and milestones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
