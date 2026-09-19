@@ -90,8 +90,31 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                   key={item.id}
                   onClick={() => onOpenLightbox(origIndex >= 0 ? origIndex : 0)}
-                  className={`portfolio-item ${item.colSpan} group cursor-pointer flex flex-col`}
+                  className={`portfolio-item ${item.colSpan} group cursor-pointer flex flex-col mb-8 md:mb-0`}
                 >
+                  {/* Mobile Static Text Info */}
+                  <div className="md:hidden flex flex-col mb-3">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-label-caps text-[10px] bg-black text-white px-2 py-0.5 uppercase tracking-widest">
+                        {item.categoryLabel}
+                      </span>
+                      <span className="font-label-caps text-[10px] text-secondary uppercase tracking-widest">
+                        {item.location}
+                      </span>
+                    </div>
+                    <h3 className="font-headline-sm text-lg text-on-surface uppercase font-bold tracking-tight mt-1">
+                      {item.title}
+                    </h3>
+                    {item.description && (
+                      <p className="font-body-sm text-xs text-on-surface-variant mt-1 line-clamp-2">
+                        {item.description}
+                      </p>
+                    )}
+                    <div className="mt-2 font-label-caps text-[10px] text-primary uppercase tracking-widest font-bold">
+                      VIEW THE STORY &gt;&gt;
+                    </div>
+                  </div>
+
                   {/* Image Frame */}
                   <div className={`relative overflow-hidden bg-surface-container ${item.aspect} shadow-md border border-outline/20`}>
                     <img
@@ -100,14 +123,14 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
                       src={item.image}
                     />
 
-                    {/* High-Contrast Hover Reveal Scrim & Story Metadata */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 sm:p-8">
+                    {/* High-Contrast Hover Reveal Scrim & Story Metadata (Desktop Only) */}
+                    <div className="hidden md:flex absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-col justify-between p-6 sm:p-8">
                       <div className="flex justify-between items-center">
                         <span className="flex items-center gap-2 px-3 py-1 bg-surface/90 backdrop-blur-sm text-on-surface font-label-caps text-[11px] uppercase tracking-widest">
                           <span className="w-1.5 h-1.5 bg-tertiary-fixed-dim inline-block"></span>
                           {item.categoryLabel}
                         </span>
-                        <span className="font-label-caps text-xs text-surface/85 tracking-widest hidden sm:inline">
+                        <span className="font-label-caps text-xs text-surface/85 tracking-widest">
                           {item.subcategory}
                         </span>
                       </div>
@@ -134,10 +157,15 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
                         </div>
                       </div>
                     </div>
+
+                    {/* Mobile Image Badge */}
+                    <div className="md:hidden absolute bottom-2 right-2 bg-black/70 text-white px-2 py-1 font-label-caps text-[9px] uppercase tracking-widest backdrop-blur-sm border border-white/20">
+                      {item.archiveTag}
+                    </div>
                   </div>
 
-                  {/* Bottom Architectural Metadata Strip */}
-                  <div className="mt-2.5 flex justify-between items-center text-on-surface-variant font-label-caps text-[11px] uppercase tracking-wider">
+                  {/* Desktop Bottom Architectural Metadata Strip */}
+                  <div className="hidden md:flex mt-2.5 justify-between items-center text-on-surface-variant font-label-caps text-[11px] uppercase tracking-wider">
                     <span className="text-on-surface-variant/80">{item.archiveTag}</span>
                     <span className="text-primary font-semibold">{item.location}</span>
                   </div>

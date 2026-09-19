@@ -49,27 +49,30 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               >
                 <div 
                   onClick={() => toggleExpand(service.id)}
-                  className="p-6 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer"
+                  className="p-4 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer"
                 >
-                  <div className="flex items-start md:items-center gap-5 sm:gap-8">
-                    <span className="font-headline-md text-2xl sm:text-3xl text-primary font-bold group-hover:text-primary transition-colors shrink-0">
-                      {service.number}
-                    </span>
-
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-headline-sm text-lg sm:text-xl text-on-surface uppercase font-bold group-hover:text-primary transition-colors">
-                          {service.title}
-                        </h3>
-                        <span className="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      </div>
-                      <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant max-w-xl mt-1 leading-relaxed">
-                        {service.description}
-                      </p>
+                  <div className="flex items-center justify-between w-full md:w-auto md:justify-start md:gap-5 sm:gap-8">
+                    <div className="flex items-center gap-3 md:gap-5">
+                      <span className="font-headline-md text-base sm:text-3xl text-primary font-bold group-hover:text-primary transition-colors shrink-0">
+                        {service.number}
+                      </span>
+                      <h3 className="font-headline-sm text-[12px] sm:text-xl text-on-surface uppercase font-bold group-hover:text-primary transition-colors">
+                        {service.title}
+                      </h3>
                     </div>
+                    {/* Mobile chevron */}
+                    <span className="material-symbols-outlined text-secondary md:hidden text-[16px] transition-transform">
+                      {isExpanded ? 'expand_less' : 'expand_more'}
+                    </span>
                   </div>
 
-                  <div className="flex items-center gap-4 self-end md:self-center shrink-0">
+                  <div className="hidden md:block flex-1 max-w-xl">
+                     <p className="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-1 leading-relaxed">
+                       {service.description}
+                     </p>
+                  </div>
+
+                  <div className="hidden md:flex items-center gap-4 self-end md:self-center shrink-0">
                     <span className="font-label-editorial text-xs italic text-on-surface-variant hidden lg:inline">
                       {service.tagline}
                     </span>

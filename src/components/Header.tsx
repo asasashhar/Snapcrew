@@ -41,25 +41,25 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
         className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
           scrolled
             ? 'bg-[#fbf9f6]/90 backdrop-blur-2xl border-b border-[#e4e2df]/80 shadow-[0_2px_20px_rgba(0,0,0,0.06)]'
-            : 'bg-transparent'
+            : 'bg-white md:bg-transparent'
         }`}
       >
-        <div className="h-20 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex items-center justify-between gap-6">
+        <div className="h-16 md:h-20 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex items-center justify-between gap-4">
           {/* Studio Brand / Official Logo */}
           <div 
             onClick={() => handleLinkClick('hero')} 
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex items-center gap-2 cursor-pointer group"
           >
             <img 
               alt="Snapcrew Studio Official Logo" 
-              className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
               src={LOGO_URL} 
             />
-            <div className="flex flex-col justify-center">
-              <span className="font-headline-sm text-base sm:text-lg tracking-tight text-on-surface uppercase font-bold">
+            <div className="flex flex-col justify-center leading-tight">
+              <span className="font-headline-sm text-sm sm:text-lg tracking-tight text-on-surface uppercase font-bold">
                 SNAPCREW STUDIO
               </span>
-              <span className="font-label-caps text-[10px] sm:text-xs text-on-surface-variant tracking-widest uppercase">
+              <span className="font-label-caps text-[8px] sm:text-xs text-on-surface-variant tracking-widest uppercase">
                 TIRUR · KERALA
               </span>
             </div>
@@ -86,18 +86,19 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
           </nav>
 
           {/* Header Action Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <button
               onClick={() => handleLinkClick('booking')}
-              className="inline-flex items-center justify-center px-4 sm:px-6 py-2 bg-primary-container text-on-primary font-label-caps text-xs tracking-widest uppercase hover:bg-primary transition-colors duration-200 shadow-sm cursor-pointer"
+              className="inline-flex items-center justify-center px-3 py-1.5 md:px-6 md:py-2 bg-primary text-white font-label-caps text-[10px] md:text-xs tracking-widest uppercase hover:bg-primary/90 transition-colors duration-200 shadow-sm cursor-pointer rounded-sm"
             >
-              <span>BOOK A SHOOT ↗</span>
+              <span className="hidden md:inline">BOOK A SHOOT ↗</span>
+              <span className="md:hidden">BOOK</span>
             </button>
 
             <a 
               href="tel:+919072123011"
               title="Direct Studio Line: +91 90721 23011"
-              className="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0 hover:bg-primary-container transition-colors shadow-sm text-white"
+              className="hidden md:flex w-9 h-9 rounded-full bg-primary items-center justify-center shrink-0 hover:bg-primary-container transition-colors shadow-sm text-white"
             >
               <span className="material-symbols-outlined text-on-primary text-[18px]">
                 call
@@ -107,10 +108,10 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-on-surface hover:text-primary transition-colors cursor-pointer"
+              className="md:hidden w-8 h-8 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors flex items-center justify-center cursor-pointer"
               aria-label="Toggle navigation menu"
             >
-              <span className="material-symbols-outlined text-[24px]">
+              <span className="material-symbols-outlined text-[18px]">
                 {mobileMenuOpen ? 'close' : 'menu'}
               </span>
             </button>

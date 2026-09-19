@@ -1,8 +1,8 @@
 import { PortfolioItem, ServiceItem, TestimonialItem } from './types';
 
-export const LOGO_URL = "https://lh3.googleusercontent.com/aida/AEtjO1WKfcKXwzUp97zhh4FX1DDKIiT2i4PO2DbxylQrobu4Di_eB7Y_uiukPaGpOxSdH3DGrIyOLRGN8flWC0bHPgF1oLQ7DvipfdjeL1sodpCUAGnLGH0sjMUeUZm08jgzEy030Z49r_jI-3IhEqLik7mje5EB4zDlgoIFiFehNHUpVxFb250jqAtzEGnwyprq-7IKPxCL05OzDLXmRhFUvBWmdkuLyDVNBjP79s0SFbEE57Zz_cxpR9qc";
+export const LOGO_URL = "/logo.png";
 
-export const HERO_IMAGE = "https://lh3.googleusercontent.com/aida-public/AB6AXuD48yaNFD7rTmDG58TpehkbfZoQ-8zi_rHIOHjHcSnmmFPngqzzU4sA_iZeYnZ1zXjeKII98DqE7P7NDLldQY9EY4S7uxfzYqKT2Mzsl7c5HSxPT1zwFT_GftDbiK-qkZhVYIiyiezuXdpzjkEFIaZYUO_4B5mYVV9W61rnvq7OpOk_rtvO2_r_s9Vbye-8uf4F-YheDiKXz-a5R4G1WP5qKzMPTXiN6kpP6GjpCeYYdd1O_-u0-08";
+export const HERO_IMAGE = "/hero_bg.png";
 
 export const ABOUT_IMAGE = "https://lh3.googleusercontent.com/aida-public/AB6AXuBjGrMCxYkFIMS86l9oXfSaTSe4E3rA5ggj6CPPop0r4tMgilu68QddlnwqLjayo6cKX5a9ohFluwO1hvYqtm4IwVMhZFQqT16zY4_MM9CGmlbr0JxHNWdE1T8aA3W17B6wAAaBwwbW9dUUL4l2Wgkx1aqBABQ18emyAfnuJgrul8Uwi-TAK2npdSXzIWHKhosi0_BKlD6_BxFgzotyj4JHaZYHIVczsEKpF4QCNxKJhiEPoaTLUU0";
 

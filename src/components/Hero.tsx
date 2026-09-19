@@ -84,10 +84,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onBookShoot }) => {
             >
               WE CAPTURE<br />
               THE MOMENTS<br />
-              <span className="font-serif-accent italic font-light lowercase text-primary-fixed-dim tracking-normal">
+              <span className="font-serif-accent italic font-light lowercase text-[#d4af37] md:text-primary-fixed-dim tracking-normal">
                 you'll
               </span>{' '}
-              <span className="text-gradient-red">KEEP.</span>
+              <span className="text-[#d4af37] md:text-gradient-red">KEEP.</span>
             </motion.h1>
           </div>
 
@@ -96,7 +96,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onBookShoot }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65, duration: 0.8 }}
-            className="font-body-lg text-base sm:text-lg text-white/75 max-w-xl mt-5 sm:mt-7 font-light leading-relaxed"
+            className="font-body-lg text-sm sm:text-lg text-white/75 max-w-xl mt-4 sm:mt-7 font-light leading-relaxed"
           >
             Photography that turns real moments into timeless stories. Documenting sacred rituals, unspoken smiles, and cinematic milestones in Kerala and worldwide.
           </motion.p>
@@ -106,30 +106,26 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onBookShoot }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.8 }}
-            className="flex flex-wrap items-center gap-4 mt-8 sm:mt-10"
+            className="flex items-center gap-2 sm:gap-4 mt-6 sm:mt-10"
           >
             <motion.button
               whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(174,0,18,0.5)' }}
               whileTap={{ scale: 0.97 }}
               onClick={onBookShoot}
-              className="relative px-8 sm:px-10 py-3.5 sm:py-4 bg-primary text-white font-label-caps text-xs uppercase tracking-widest shadow-2xl flex items-center gap-2 group cursor-pointer overflow-hidden"
+              className="relative px-4 sm:px-10 py-2.5 sm:py-4 bg-primary text-white font-label-caps text-[10px] sm:text-xs uppercase tracking-widest shadow-2xl flex items-center gap-2 group cursor-pointer overflow-hidden rounded-sm"
             >
               {/* shine sweep */}
               <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none"></span>
               <span>BOOK A SHOOT</span>
-              <span className="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                arrow_outward
-              </span>
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.04, backgroundColor: 'rgba(255,255,255,0.18)' }}
               whileTap={{ scale: 0.97 }}
               onClick={onExploreWork}
-              className="px-8 sm:px-10 py-3.5 sm:py-4 bg-white/10 text-white border border-white/25 backdrop-blur-md font-label-caps text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 shadow-lg cursor-pointer"
+              className="px-4 sm:px-10 py-2.5 sm:py-4 bg-white/10 text-white border border-white/25 backdrop-blur-md font-label-caps text-[10px] sm:text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 shadow-lg cursor-pointer rounded-sm"
             >
-              <span>EXPLORE OUR WORK</span>
-              <span className="material-symbols-outlined text-[16px] animate-bounce">arrow_downward</span>
+              <span>EXPLORE WORK</span>
             </motion.button>
           </motion.div>
         </div>

@@ -52,15 +52,21 @@ export const AboutSection: React.FC = () => {
                 <span className="font-label-caps text-[10px] sm:text-xs text-secondary uppercase tracking-wider">Pure Emotion</span>
               </motion.div>
             </div>
+            {/* Mobile Quote Card (Visible only on mobile) */}
+            <div className="lg:hidden mt-8 border-l-4 border-primary pl-4 py-1">
+              <p className="font-serif-accent text-base text-on-surface-variant italic leading-snug">
+                "Preserving the rhythm of Kerala's soul through truthful lenses."
+              </p>
+            </div>
           </motion.div>
 
-          {/* Right: Asymmetric Editorial Photo Canvas */}
+          {/* Right: Asymmetric Editorial Photo Canvas (Hidden on mobile to match design) */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.9, ease: 'easeOut', delay: 0.1 }}
-            className="lg:col-span-5 relative mt-10 lg:mt-0"
+            className="hidden lg:block lg:col-span-5 relative mt-10 lg:mt-0"
           >
             <div className="relative bg-surface-container shadow-2xl overflow-hidden group border border-surface-container-highest card-hover-glow">
               <img
@@ -77,13 +83,13 @@ export const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Decorative Offset Quote Card */}
+            {/* Decorative Offset Quote Card for Desktop */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="hidden sm:block absolute -bottom-6 -left-6 bg-surface-container-highest p-5 max-w-xs shadow-xl border border-[#dbdad7] float-slow"
+              className="absolute -bottom-6 -left-6 bg-surface-container-highest p-5 max-w-xs shadow-xl border border-[#dbdad7] float-slow"
             >
               <p className="font-serif-accent text-sm sm:text-base text-on-surface-variant italic leading-snug">
                 "Preserving the rhythm of Kerala's soul through truthful lenses."

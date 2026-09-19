@@ -116,25 +116,49 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       </footer>
 
       {/* Floating WhatsApp Studio Widget */}
-      <aside className="fixed bottom-6 right-6 z-40 group flex items-center gap-2">
-        <div className="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 bg-inverse-surface text-inverse-on-surface font-label-caps text-[11px] px-3 py-1 shadow-lg uppercase tracking-wider hidden sm:block">
+      <aside className="fixed bottom-24 md:bottom-6 right-4 md:right-6 z-40 group flex items-center gap-2">
+        <div className="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 bg-inverse-surface text-inverse-on-surface font-label-caps text-[11px] px-3 py-1 shadow-lg uppercase tracking-wider hidden md:block">
           Direct Studio Line
         </div>
         <a
           aria-label="Connect on WhatsApp"
-          className="flex items-center gap-2.5 bg-inverse-surface text-inverse-on-surface px-4 py-3 shadow-2xl hover:bg-on-surface transition-all duration-200 border border-surface/20 hover:scale-105"
+          className="flex items-center justify-center bg-primary text-white w-14 h-14 md:w-auto md:h-auto md:px-4 md:py-3 shadow-2xl md:hover:bg-primary-container md:hover:text-primary transition-all duration-200 border border-transparent md:border-surface/20 hover:scale-105 rounded-full md:rounded-sm"
           href="https://wa.me/919072123011"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className="material-symbols-outlined text-tertiary-fixed-dim text-[20px]">
+          <span className="material-symbols-outlined text-[24px] md:text-[20px] md:text-tertiary-fixed-dim">
             chat
           </span>
-          <span className="font-label-caps text-xs tracking-wider uppercase font-semibold">
+          <span className="hidden md:inline font-label-caps text-xs tracking-wider uppercase font-semibold ml-2.5">
             WhatsApp Studio
           </span>
         </a>
       </aside>
+
+      {/* Mobile Bottom Navigation Bar */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 h-20 bg-white border-t border-gray-200 z-50 flex items-center justify-around px-2 pb-2">
+        <button onClick={() => onNavigate('hero')} className="flex flex-col items-center gap-1 text-primary w-16">
+          <span className="material-symbols-outlined text-[22px]">home</span>
+          <span className="text-[9px] uppercase tracking-wider font-bold">Home</span>
+        </button>
+        <button onClick={() => onNavigate('portfolio')} className="flex flex-col items-center gap-1 text-gray-400 w-16">
+          <span className="material-symbols-outlined text-[22px]">photo_library</span>
+          <span className="text-[9px] uppercase tracking-wider font-bold">Gallery</span>
+        </button>
+        <button onClick={() => onNavigate('services')} className="flex flex-col items-center gap-1 text-gray-400 w-16">
+          <span className="material-symbols-outlined text-[22px]">movie</span>
+          <span className="text-[9px] uppercase tracking-wider font-bold">Films</span>
+        </button>
+        <button onClick={() => onNavigate('about-intro')} className="flex flex-col items-center gap-1 text-gray-400 w-16">
+          <span className="material-symbols-outlined text-[22px]">store</span>
+          <span className="text-[9px] uppercase tracking-wider font-bold">Studio</span>
+        </button>
+        <button onClick={() => onNavigate('location')} className="flex flex-col items-center gap-1 text-gray-400 w-16">
+          <span className="material-symbols-outlined text-[22px]">call</span>
+          <span className="text-[9px] uppercase tracking-wider font-bold">Contact</span>
+        </button>
+      </nav>
     </>
   );
 };
