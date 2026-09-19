@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { LOGO_URL } from '../data';
 
 interface HeaderProps {
@@ -8,6 +9,15 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { label: 'Work', target: 'portfolio' },
@@ -24,7 +34,16 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 w-full z-50 bg-[#fbf9f6]/90 backdrop-blur-xl border-b border-[#e4e2df]/80 shadow-[0_1px_8px_rgba(0,0,0,0.03)] transition-all">
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-[#fbf9f6]/90 backdrop-blur-2xl border-b border-[#e4e2df]/80 shadow-[0_2px_20px_rgba(0,0,0,0.06)]'
+            : 'bg-transparent'
+        }`}
+      >
         <div className="h-20 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex items-center justify-between gap-6">
           {/* Studio Brand / Official Logo */}
           <div 
@@ -125,7 +144,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
             </div>
           </div>
         )}
-      </header>
+      </motion.header>
     </>
   );
 };

@@ -18,6 +18,7 @@ import { LocationSection } from './components/LocationSection';
 import { BookingSection } from './components/BookingSection';
 import { LightboxModal } from './components/LightboxModal';
 import { Footer } from './components/Footer';
+import { CustomCursor } from './components/CustomCursor';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>('hero');
@@ -84,6 +85,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-surface font-body-md text-on-surface antialiased flex flex-col selection:bg-primary-container selection:text-white">
+      <CustomCursor />
       {/* 1. Fixed Header */}
       <Header
         activeSection={activeSection}

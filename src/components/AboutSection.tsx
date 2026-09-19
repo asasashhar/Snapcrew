@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { ABOUT_IMAGE } from '../data';
 
 export const AboutSection: React.FC = () => {
@@ -7,9 +8,15 @@ export const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           {/* Left: Text & Monolithic Editorial Statement */}
-          <div className="lg:col-span-7 flex flex-col items-start">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-2.5 h-2.5 bg-tertiary-fixed-dim inline-block"></span>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="lg:col-span-7 flex flex-col items-start"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <span className="section-line !mb-0 !w-6"></span>
               <span className="font-label-caps text-xs tracking-[0.2em] text-primary uppercase font-bold">
                 01 / ABOUT SNAPCREW
               </span>
@@ -31,37 +38,31 @@ export const AboutSection: React.FC = () => {
             </p>
 
             {/* Archival Metric Strip */}
-            <div className="grid grid-cols-3 gap-4 w-full max-w-lg bg-surface-container-low p-5 sm:p-6 border border-surface-container-highest/60">
-              <div>
-                <span className="font-headline-md text-2xl sm:text-3xl text-on-surface block font-bold">
-                  850+
-                </span>
-                <span className="font-label-caps text-[10px] sm:text-xs text-secondary uppercase tracking-wider">
-                  Weddings Stored
-                </span>
-              </div>
-              <div>
-                <span className="font-headline-md text-2xl sm:text-3xl text-primary block font-bold">
-                  12+
-                </span>
-                <span className="font-label-caps text-[10px] sm:text-xs text-secondary uppercase tracking-wider">
-                  Years Archiving
-                </span>
-              </div>
-              <div>
-                <span className="font-headline-md text-2xl sm:text-3xl text-tertiary block font-bold">
-                  100%
-                </span>
-                <span className="font-label-caps text-[10px] sm:text-xs text-secondary uppercase tracking-wider">
-                  Pure Emotion
-                </span>
-              </div>
+            <div className="grid grid-cols-3 gap-4 w-full max-w-lg bg-surface-container-low p-5 sm:p-6 border border-surface-container-highest/60 card-accent">
+              <motion.div whileHover={{ scale: 1.06 }} transition={{ type: 'spring', stiffness: 300 }}>
+                <span className="font-headline-md text-2xl sm:text-3xl text-on-surface block font-bold">850+</span>
+                <span className="font-label-caps text-[10px] sm:text-xs text-secondary uppercase tracking-wider">Weddings Stored</span>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.06 }} transition={{ type: 'spring', stiffness: 300 }}>
+                <span className="font-headline-md text-2xl sm:text-3xl text-primary block font-bold">12+</span>
+                <span className="font-label-caps text-[10px] sm:text-xs text-secondary uppercase tracking-wider">Years Archiving</span>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.06 }} transition={{ type: 'spring', stiffness: 300 }}>
+                <span className="font-headline-md text-2xl sm:text-3xl text-tertiary block font-bold">100%</span>
+                <span className="font-label-caps text-[10px] sm:text-xs text-secondary uppercase tracking-wider">Pure Emotion</span>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Asymmetric Editorial Photo Canvas */}
-          <div className="lg:col-span-5 relative mt-10 lg:mt-0">
-            <div className="relative bg-surface-container shadow-2xl overflow-hidden group border border-surface-container-highest">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.9, ease: 'easeOut', delay: 0.1 }}
+            className="lg:col-span-5 relative mt-10 lg:mt-0"
+          >
+            <div className="relative bg-surface-container shadow-2xl overflow-hidden group border border-surface-container-highest card-hover-glow">
               <img
                 className="w-full aspect-[4/5] object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                 alt="Black and white high-contrast editorial portrait of an Indian bride adjusting traditional gold jhumka earrings, soft directional natural window light, vintage matte film look"
@@ -77,15 +78,21 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Decorative Offset Quote Card */}
-            <div className="hidden sm:block absolute -bottom-6 -left-6 bg-surface-container-highest p-5 max-w-xs shadow-xl border border-[#dbdad7]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="hidden sm:block absolute -bottom-6 -left-6 bg-surface-container-highest p-5 max-w-xs shadow-xl border border-[#dbdad7] float-slow"
+            >
               <p className="font-serif-accent text-sm sm:text-base text-on-surface-variant italic leading-snug">
-                "Preserving the rhythm of Kerala’s soul through truthful lenses."
+                "Preserving the rhythm of Kerala's soul through truthful lenses."
               </p>
               <span className="font-label-caps text-[10px] text-tertiary block mt-2 tracking-widest uppercase font-semibold">
                 — Studio Director
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

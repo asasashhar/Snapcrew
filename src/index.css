@@ -209,3 +209,123 @@
 .rounded-full {
   border-radius: 9999px !important;
 }
+
+/* ============================================================
+   PREMIUM LIGHT-MODE ENHANCEMENTS
+   ============================================================ */
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #fbf9f6; }
+::-webkit-scrollbar-thumb { background: #ae0012; }
+
+/* Hide default cursor on desktop where custom cursor is shown */
+@media (min-width: 640px) {
+  * { cursor: none !important; }
+}
+
+/* Gradient text for hero accent words */
+.text-gradient-red {
+  background: linear-gradient(135deg, #ae0012 0%, #d71921 50%, #febb2d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle noise/film grain overlay — very faint, only on page bg */
+.grain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  background-image: none;
+}
+
+/* Shimmer effect for section labels */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-label {
+  background: linear-gradient(90deg, #ae0012 0%, #febb2d 40%, #ae0012 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Floating / gentle hover lift */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.float-slow { animation: float 6s ease-in-out infinite; }
+
+/* Reveal underline on hover */
+.hover-underline-anim {
+  position: relative;
+}
+.hover-underline-anim::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ae0012;
+  transition: width 0.3s ease;
+}
+.hover-underline-anim:hover::after {
+  width: 100%;
+}
+
+/* Red left-border accent on cards */
+.card-accent {
+  border-left: 3px solid #ae0012;
+}
+
+/* Horizontal marquee scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: marquee 18s linear infinite;
+  white-space: nowrap;
+}
+.marquee-container {
+  overflow: hidden;
+  display: flex;
+}
+
+/* Premium card hover glow */
+.card-hover-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-hover-glow:hover {
+  box-shadow: 0 20px 60px rgba(174,0,18,0.10), 0 4px 20px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+/* Section reveal line */
+.section-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ae0012;
+  margin-bottom: 1rem;
+}
+
+/* Stagger children helper */
+.stagger > *:nth-child(1) { transition-delay: 0ms; }
+.stagger > *:nth-child(2) { transition-delay: 80ms; }
+.stagger > *:nth-child(3) { transition-delay: 160ms; }
+.stagger > *:nth-child(4) { transition-delay: 240ms; }
+.stagger > *:nth-child(5) { transition-delay: 320ms; }
+.stagger > *:nth-child(6) { transition-delay: 400ms; }
+
